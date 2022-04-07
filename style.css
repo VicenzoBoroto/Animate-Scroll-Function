@@ -1,0 +1,31 @@
+/* Separar os dois parágrafos para ver o efeito ao scrollar */
+body {
+    height: 2000px;
+}
+  
+.paragrafo1 {
+    margin-bottom: 1000px;
+    margin-top: 1000px;
+}
+  
+/* Aplicar os efeitos de animação no CSS */
+/* Esse será o estado de todos os elementos com data-anime antes da animação */
+[data-anime] {
+    opacity: 0;
+    transition: 0.8s
+}
+  
+/* Aqui é definido de qual ponto o conteudo vai começar a aparecer, EX: data-anime=left vai aparecer a -50px na tela e vai mudando a opacitade até chegar ao seu ponto natural */
+[data-anime="top"] {
+    transform: translate3d(0, 50px, 0);
+}
+  
+[data-anime="left"] {
+    transform: translate3d(-50px, 0, 0);
+}
+  
+/* Aqui definimos o estado de todos os elementos com data-anime após a animação (após adicionar a classe .animate no elemento) */
+[data-anime].animate {
+    opacity: 1;
+    transform: translate3d(0px, 0px, 0px);
+}
